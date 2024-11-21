@@ -1,7 +1,7 @@
 {
   "name": "iconify-set",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@9.14.2",
   "description": "Check if given string is an iconify icon set name",
   "keywords": [
