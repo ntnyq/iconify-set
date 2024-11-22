@@ -28,6 +28,7 @@
     "iconify",
     "lcov",
     "pnpm",
+    "stefanzweifel",
     "vite",
     "vitest"
   ],

@@ -1,0 +1,32 @@
+name: Schedule
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # UTC time 00:00 every 3 day
+    - cron: '0 0 */3 * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run update
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'feat: add iconify set'
+          commit_options: --no-verify --signoff
+          file_pattern: src/iconify.json
+          commit_author: Author <actions@github.com>
