@@ -17,12 +17,12 @@ export const ICONIFY_SET_NAMES: string[] = iconifySetNames
  * @example
  *
  *```ts
- *import { isIconifySetName } from 'iconify-set'
+ * import { isIconifySetName } from 'iconify-set'
  *
- *console.log(isIconifySetName('mdi')) // -> true
- *console.log(isIconifySetName('carbon')) // -> true
+ * console.log(isIconifySetName('mdi')) // -> true
+ * console.log(isIconifySetName('carbon')) // -> true
  *
- *console.log(isIconifySetName('foobar')) // -> false
+ * console.log(isIconifySetName('foobar')) // -> false
  *```
  */
 export function isIconifySetName(name: string) {

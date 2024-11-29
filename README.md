@@ -3,7 +3,6 @@
 [![CI](https://github.com/ntnyq/iconify-set/workflows/CI/badge.svg)](https://github.com/ntnyq/iconify-set/actions)
 [![NPM VERSION](https://img.shields.io/npm/v/iconify-set.svg)](https://www.npmjs.com/package/iconify-set)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dy/iconify-set.svg)](https://www.npmjs.com/package/iconify-set)
-[![CODECOV](https://codecov.io/github/ntnyq/iconify-set/branch/main/graph/badge.svg)](https://codecov.io/github/ntnyq/iconify-set)
 [![LICENSE](https://img.shields.io/github/license/ntnyq/iconify-set.svg)](https://github.com/ntnyq/iconify-set/blob/main/LICENSE)
 
 > Check if given string is an iconify icon set name.
