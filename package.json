@@ -2,7 +2,7 @@
   "name": "iconify-set",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.1",
   "description": "Check if given string is an iconify icon set name",
   "keywords": [
     "check",
@@ -59,28 +59,28 @@
     "update": "run-s iconify:update iconify:pretty"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^3.6.0",
+    "@ntnyq/eslint-config": "^3.10.2",
     "@ntnyq/prettier-config": "^1.22.0",
-    "@types/node": "^22.10.1",
-    "@vitest/coverage-v8": "^2.1.6",
-    "bumpp": "^9.8.1",
-    "consola": "^3.2.3",
-    "eslint": "^9.15.0",
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "bumpp": "^9.9.2",
+    "consola": "^3.3.1",
+    "eslint": "^9.17.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
-    "npm-run-all2": "^7.0.1",
-    "prettier": "^3.4.1",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "unbuild": "^3.0.0-rc.11",
-    "vitest": "^2.1.6"
+    "unbuild": "^3.0.1",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=18.18.0"
   },
   "pnpm": {
     "overrides": {
-      "@rollup/plugin-commonjs": "^28.0.1"
+      "@rollup/plugin-commonjs": "^28.0.2"
     }
   },
   "prettier": "@ntnyq/prettier-config",
