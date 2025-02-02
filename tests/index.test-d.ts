@@ -9,6 +9,6 @@ describe('typecheck', () => {
   it('should params type match', () => {
     assertType<(code: string) => boolean>(isIconifySetName)
 
-    expectTypeOf(isIconifySetName).parameter(0).toBeString()
+    expectTypeOf(isIconifySetName).parameters.toMatchTypeOf<[string]>()
   })
 })
