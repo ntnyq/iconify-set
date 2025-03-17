@@ -2,7 +2,7 @@
   "name": "iconify-set",
   "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "description": "Check if given string is an iconify icon set name",
   "keywords": [
     "check",
@@ -61,7 +61,7 @@
     "@ntnyq/eslint-config": "^3.12.3",
     "@ntnyq/prettier-config": "^2.0.0",
     "@types/node": "^22.13.10",
-    "bumpp": "^10.0.3",
+    "bumpp": "^10.1.0",
     "consola": "^3.4.0",
     "eslint": "^9.22.0",
     "husky": "^9.1.7",
