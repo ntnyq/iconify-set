@@ -1,10 +1,13 @@
 {
-  "prettier.enable": true,
   "eslint.enable": true,
+  "prettier.enable": true,
   "editor.formatOnSave": true,
+  "prettier.configPath": "./prettier.config.mjs",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "never",
+    "source.sortImports": "never"
   },
   "eslint.validate": [
     "vue",
@@ -25,13 +28,16 @@
     "bumpp",
     "changelogithub",
     "CODECOV",
+    "esbuild",
     "iconify",
     "lcov",
     "pnpm",
     "stefanzweifel",
+    "tsdown",
+    "unrs",
     "vite",
     "vitest"
   ],
   "cSpell.allowCompoundWords": true,
-  "cSpell.ignorePaths": ["src/iconify.json"]
+  "cSpell.ignorePaths": ["src/iconify.json", ".vscode/settings.json"]
 }

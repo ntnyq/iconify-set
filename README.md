@@ -9,15 +9,15 @@
 
 ## Install
 
-```bash
+```shell
 npm install iconify-set
 ```
 
-```bash
+```shell
 yarn add iconify-set
 ```
 
-```bash
+```shell
 pnpm add iconify-set
 ```
 

@@ -1,4 +1,4 @@
-import iconifySetNames from './iconify.json'
+import iconifySetNames from './iconify.json' with { type: 'json' }
 
 /**
  * [iconify](https://iconify.design/) icon set names
@@ -26,6 +26,8 @@ export const ICONIFY_SET_NAMES: string[] = iconifySetNames
  *```
  */
 export function isIconifySetName(name: string) {
-  if (!name || typeof name !== 'string') return false
+  if (!name || typeof name !== 'string') {
+    return false
+  }
   return ICONIFY_SET_NAMES.includes(name)
 }

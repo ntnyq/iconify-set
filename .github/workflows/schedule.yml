@@ -26,7 +26,7 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'feat: add iconify set'
+          commit_message: 'feat: update iconify sets'
           commit_options: --no-verify --signoff
           file_pattern: src/iconify.json
           commit_author: Author <actions@github.com>

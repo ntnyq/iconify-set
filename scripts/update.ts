@@ -8,8 +8,13 @@ async function fetchIconifySetNames(
 ): Promise<string[]> {
   const result: string[] = []
   try {
-    const res = await fetch(`https://api.github.com/repos/${repo}/contents/${subPath}`)
-    const data: Array<{ name: string; type: 'file' | 'dir' }> = await res.json()
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/contents/${subPath}`,
+    )
+    const data = (await res.json()) as Array<{
+      name: string
+      type: 'file' | 'dir'
+    }>
     for (const item of data) {
       if (item.type === 'file' && item.name.endsWith('.json')) {
         result.push(item.name.replace(/\.json$/, ''))
@@ -25,7 +30,10 @@ async function fetchIconifySetNames(
 async function updateIconifySetNames() {
   consola.info('Updating Iconify set names')
   const iconNames = await fetchIconifySetNames()
-  await writeFile(resolve('src/iconify.json'), JSON.stringify(iconNames, null, 2))
+  await writeFile(
+    resolve('src/iconify.json'),
+    JSON.stringify(iconNames, null, 2),
+  )
   consola.success('Iconify set names updated')
 }
 
