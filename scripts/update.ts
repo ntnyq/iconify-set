@@ -15,7 +15,7 @@ async function fetchIconifySetNames(
       name: string
       type: 'file' | 'dir'
     }>
-    for (const item of data) {
+    for (const item of Array.from(data)) {
       if (item.type === 'file' && item.name.endsWith('.json')) {
         result.push(item.name.replace(/\.json$/, ''))
       }
