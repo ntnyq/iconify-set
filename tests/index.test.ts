@@ -44,9 +44,9 @@ const invalidNames = [
 ]
 
 it.each(validNames)('valid iconify set name', name => {
-  expect(isIconifySetName(name)).toBe(true)
+  expect(isIconifySetName(name)).toBeTruthy()
 })
 
 it.each(invalidNames)('invalid iconify set name', name => {
-  expect(isIconifySetName(name as string)).toBe(false)
+  expect(isIconifySetName(name as string)).toBeFalsy()
 })
