@@ -1,7 +1,7 @@
 name: Release
 
 permissions:
-  id-token: write
+  id-token: write # Required for OIDC
   contents: write
 
 on:
@@ -25,3 +25,7 @@ jobs:
       - run: pnpm dlx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - run: pnpm install --frozen-lockfile
+      - run: npm install -g npm@latest
+      - run: npm publish
