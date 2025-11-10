@@ -15,7 +15,7 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       '@types/node':
-        specifier: ^24.9.1
+        specifier: ^24.10.0
         version: 24.10.0
       bumpp:
         specifier: ^10.3.1
