@@ -43,10 +43,11 @@ const invalidNames = [
   'foobar',
 ]
 
-it.each(validNames)('valid iconify set name', name => {
+it.each(validNames)('%s is a valid iconify set name', name => {
   expect(isIconifySetName(name)).toBeTruthy()
 })
 
-it.each(invalidNames)('invalid iconify set name', name => {
-  expect(isIconifySetName(name as string)).toBeFalsy()
+it.each(invalidNames)('%s is an invalid iconify set name', name => {
+  // @ts-expect-error Testing invalid names
+  expect(isIconifySetName(name)).toBeFalsy()
 })
