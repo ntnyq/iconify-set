@@ -2,7 +2,7 @@
   "name": "iconify-set",
   "type": "module",
   "version": "0.1.5",
-  "packageManager": "pnpm@10.29.2",
+  "packageManager": "pnpm@10.29.3",
   "description": "Check if given string is an iconify icon set name",
   "keywords": [
     "check",
@@ -53,15 +53,15 @@
     "update": "run-s iconify:update iconify:pretty"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^6.0.0-beta.7",
-    "@types/node": "^24.10.12",
+    "@ntnyq/eslint-config": "^6.0.0-beta.8",
+    "@types/node": "^24.10.13",
     "bumpp": "^10.4.1",
     "consola": "^3.4.2",
     "eslint": "^10.0.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.9.0",
     "npm-run-all2": "^8.0.4",
-    "oxfmt": "^0.28.0",
+    "oxfmt": "^0.32.0",
     "tsdown": "^0.20.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
