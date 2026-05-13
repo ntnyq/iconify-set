@@ -1,20 +1,25 @@
 name: Schedule
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch: {}
   schedule:
     # UTC time 00:00 every 3 day
     - cron: '0 0 */3 * *'
 
+concurrency:
+  group: iconify-update-release
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
-      contents: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
@@ -24,9 +29,31 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm run update
 
-      - uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: 'feat: update iconify sets'
-          commit_options: --no-verify --signoff
-          file_pattern: src/iconify.json
-          commit_author: Author <actions@github.com>
+      - id: changes
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure Git User
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit Updated Iconify Sets
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git add -A
+          git commit -m "feat: update iconify sets"
+
+      - name: Bump Patch Release
+        if: steps.changes.outputs.changed == 'true'
+        run: pnpm exec bumpp --yes --release patch
+
+      - name: No Changes
+        if: steps.changes.outputs.changed != 'true'
+        run: echo "No changes detected. Skip release."
