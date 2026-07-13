@@ -2,7 +2,7 @@
   "name": "iconify-set",
   "type": "module",
   "version": "0.1.9",
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.10.0",
   "description": "Check if given string is an iconify icon set name",
   "keywords": [
     "check",
@@ -61,12 +61,12 @@
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
     "npm-run-all2": "^9.0.2",
-    "oxfmt": "^0.56.0",
-    "oxlint": "^1.71.0",
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
     "tsdown": "^0.22.3",
-    "tsx": "^4.22.4",
+    "tsx": "^4.23.0",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.10"
   },
   "nano-staged": {
     "*.{js,ts,mjs,md,yml,yaml,json}": "eslint --fix",
